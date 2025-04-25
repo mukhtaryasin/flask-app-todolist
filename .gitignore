@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+*.env
+*.pyo
+
+# virtual environment
+venv/
+venv.bak/   
+venv.bak2/
+# mypy
+.mypy_cache/
+.mypy/  
