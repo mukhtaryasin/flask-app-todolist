@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Trash Bin{% endblock %}
+
+{% block content %}
+<div class="bg-white w-full max-w-xl p-6 rounded-xl shadow-xl">
+  <h1 class="text-2xl font-semibold text-center text-gray-800 mb-4">🗑️ Trash Bin</h1>
+
+  {% if trash %}
+    <ul class="space-y-2">
+      {% for item in trash %}
+      <li class="bg-red-50 p-3 rounded-lg text-gray-700 shadow-sm">
+        {{ item.task }}
+        <p class="text-sm text-gray-500">Deleted: {{ item.deleted_at.strftime('%Y-%m-%d %H:%M') }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="text-gray-500 text-center">No items in trash.</p>
+  {% endif %}
+
+  <div class="mt-4 text-center">
+    <a href="/" class="text-blue-500 hover:underline">← Back to To-Do List</a>
+  </div>
+</div>
+{% endblock %}

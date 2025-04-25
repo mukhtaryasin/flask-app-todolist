@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+<div class="bg-white w-full max-w-xl p-6 rounded-xl shadow-xl">
+  <h1 class="text-xl font-semibold text-center text-gray-800 mb-4">✏️ Edit Task</h1>
+
+  <form action="/update/{{ index }}" method="post" class="flex flex-col gap-4 border p-4 rounded-lg">
+    <input type="text" name="task" value="{{ todo.task }}" required
+           class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+    <div class="flex justify-between">
+      <a href="/" class="text-gray-600 hover:underline">← Back</a>
+      <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}
